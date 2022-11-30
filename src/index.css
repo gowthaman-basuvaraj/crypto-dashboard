@@ -1,13 +1,83 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100;300;400;500;600;800&display=swap");
+
+:root {
+  --black: #111;
+  --white: #fff;
+  --blue: #3a80e9;
+  --yellow: rgba(197, 240, 8, 0.342);
+}
+* {
+  box-sizing: border-box;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+body {
+  margin: 0;
+  font-family: "Inter", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: var(--black);
+  color: var(--white);
+}
+
+/* For headings */
+h1 {
+  font-size: 20.75rem;
+  font-weight: 700;
+  color: var(--white);
+}
+/* for Sub-headings */
+h2 {
+  font-size: 4rem;
+  font-weight: 700;
+  color: var(--white);
+}
+h3 {
+  font-size: 2.25rem;
+  font-weight: 500;
+  color: var(--white);
+}
+h4 {
+  font-size: 1.8754rem;
+  font-weight: 500;
+  color: var(--white);
+}
+h5 {
+  font-size: 1.5rem;
+  font-weight: 400;
+  color: var(--white);
+}
+p {
+  font-size: 1rem;
+  font-weight: 400;
+  color: var(--white);
+}
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+::selection {
+  background-color: var(--blue);
+  color: var(--white);
+}
+
+/* Disabling image dragging */
+img {
+  -webkit-user-drag: none;
+  -khtml-user-drag: none;
+  -moz-user-drag: none;
+  -o-user-drag: none;
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+  width: 0.4rem;
+}
+::-webkit-scrollbar-track {
+  background: var(--black);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--blue);
+  border-radius: 1rem;
 }
