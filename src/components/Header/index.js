@@ -1,8 +1,41 @@
 import React from "react";
 import "./styles.css";
+import Button from "../Button";
+import Dashboard from "../../pages/Dashboard";
+import Search from "../../pages/Search";
+import Home from "../../pages/Home";
+import Drawer from "./Drawer";
 
 function Header() {
-  return <div className="header">Header</div>;
+  return (
+    <>
+      <div className="navbar">
+        <h1 className="heading">
+          CryptoTracker
+          <span style={{ color: "var(--blue)" }}>.</span>
+        </h1>
+        <div className="links-flex">
+          <a href="/">
+            <p className="links">Home</p>
+          </a>
+          <a href="/search">
+            <p className="links">Search</p>
+          </a>
+          <a href="/about-us">
+            <p className="links">About Us</p>
+          </a>
+          <a href="/dashboard">
+            <p className="links">
+              <Button text="Dashboard" />
+            </p>
+          </a>
+        </div>
+        <div className="menu-div">
+          <Drawer />
+        </div>
+      </div>
+    </>
+  );
 }
 
 export default Header;
