@@ -6,6 +6,10 @@
   justify-content: space-between;
   align-items: center;
   width: 100%;
+  position: sticky;
+  top: 0;
+  background-color: var(--black);
+  /* z-index: 100; */
 }
 .links-flex {
   display: flex;
@@ -54,4 +58,27 @@
     max-height: 1.15rem;
     transition: all 0.29s;
   }
+}
+
+.drawer-div {
+  width: 37vw;
+  height: 100vh;
+  padding: 1rem;
+  padding-left: 0;
+  background-color: var(--black);
+  border-left: 0.6px solid whitesmoke;
+  color: var(--white);
+  font-weight: 800;
+}
+.drawer-div p {
+  padding: 8px;
+}
+.line {
+  width: 80%;
+  display: block;
+  height: 2px;
+  background-color: var(--grey);
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 11px;
 }
