@@ -2,9 +2,9 @@
 
 :root {
   --black: #111;
-  --white: rgb(252, 252, 252);
+  --white: #fcfcfc;
   --blue: #3a80e9;
-  --yellow: rgba(197, 240, 8, 0.342);
+  --yellow: #f7ca37c9;
   --grey: #888;
 }
 * {
@@ -62,7 +62,7 @@ a {
   text-decoration: none;
 }
 ::selection {
-  background-color: var(--blue);
+  background-color: var(--yellow);
   color: var(--white);
 }
 
@@ -86,3 +86,7 @@ img {
   background: var(--blue);
   border-radius: 1rem;
 }
+/* .scroll::-webkit-scrollbar {
+  width: 12px;
+  height: 10px;
+} */
