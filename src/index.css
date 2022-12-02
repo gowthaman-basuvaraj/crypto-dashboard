@@ -86,7 +86,11 @@ img {
   background: var(--blue);
   border-radius: 1rem;
 }
-/* .scroll::-webkit-scrollbar {
-  width: 12px;
-  height: 10px;
-} */
+h1,
+h2,
+h3,
+h4,
+h5,
+p {
+  color: var(--white);
+}
