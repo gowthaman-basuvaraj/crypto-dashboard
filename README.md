@@ -71,5 +71,8 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/t
 
 <!--1. Did the homepage in 90% zoom when found the bug had to refactor almost all the css w.r.t to size and margin/padding.
 2.How to implement framer motion and use MUI
-3. share button was not working using the react-web-share npm to solve that enclosed the Oultined btn component button tag and removed all the default properties of the button
+3. share button was not working using the react-web-share npm to solve that enclosed the Oultined btn component button tag and removed all the default properties of the button.
+4.Tabs was difficult to implement.
+5.After TabContext was added same data was rendered in grid and List-->Solution:Added Value of {0} and{1}
+
 -->
