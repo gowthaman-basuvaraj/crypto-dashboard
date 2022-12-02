@@ -30,6 +30,12 @@
   color: var(--yellow);
   transition: all 0.25s;
 }
+.big-heading-blue span {
+  color: var(--yellow);
+}
+.big-heading-blue:hover span {
+  color: var(--blue);
+}
 .img-box {
   position: relative;
   width: 40%;
@@ -40,19 +46,21 @@
 
 .phone {
   display: block;
-  width: 350px;
-  height: 600px;
+  width: 65%;
+  height: 32rem;
   position: absolute;
   top: 0;
   right: -2rem;
+  min-width: 250px;
 }
 
 .gradient {
   position: absolute;
-  width: 260px;
-  top: 4.8rem;
-  right: 0.2rem;
-  height: 5 00px;
+  width: 46.5%;
+  top: 5rem;
+  right: -3%;
+  object-fit: contain;
+  min-width: 12.5rem;
 }
 
 .para {
@@ -77,4 +85,60 @@ input[type="reset"] {
   font: inherit;
   cursor: pointer;
   outline: inherit;
+}
+
+@media only screen and (max-width: 1200px) {
+  .big-heading {
+    font-size: 5rem;
+  }
+  .img-box {
+    width: 32%;
+  }
+  .phone {
+    /* width: 75%; */
+    height: auto;
+    min-width: 11.2rem;
+  }
+  .gradient {
+    min-width: 8rem;
+    height: auto;
+    top: 4rem;
+    right: -2.2rem;
+  }
+}
+@media only screen and (max-width: 800px) {
+  .heading-container {
+    text-align: center;
+    width: 100%;
+  }
+  .big-heading {
+    font-size: 3rem;
+  }
+  .wrapper {
+    flex-direction: column;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+    align-items: center;
+    justify-content: center;
+  }
+  .gradient {
+    position: inherit;
+    width: 26.5%;
+    top: 3.9rem;
+    right: -1rem;
+    min-width: 11.2rem;
+  }
+  .button-div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-flow: wrap;
+    padding: 2rem 2rem;
+    margin: 3rem auto 0;
+    /* gap: 3rem; */
+  }
+}
+.phone {
+  min-width: 14rem;
+  margin: 0 -1.45rem;
 }
