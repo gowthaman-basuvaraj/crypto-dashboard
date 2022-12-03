@@ -57,7 +57,7 @@
 .gradient {
   position: absolute;
   width: 46.5%;
-  top: 5rem;
+  top: 1.88em;
   right: -3%;
   object-fit: contain;
   min-width: 12.5rem;

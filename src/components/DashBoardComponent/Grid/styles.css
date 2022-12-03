@@ -8,16 +8,30 @@
   align-items: center;
   flex-direction: column;
   padding: 1rem;
+  cursor: pointer;
+  border: 1.1px solid transparent;
+  position: relative;
 }
 .logo-div {
   display: flex;
-  width: 100%;
-  justify-content: flex-start;
+  width: 95%;
+  justify-content: space-around;
   align-items: center;
 }
 img {
   width: 20%;
+  margin-right: 0.75rem;
+  margin-left: 0.1rem;
+}
+.data-div {
+  position: absolute;
+  top: 4.5rem;
+  margin-top: 1.7rem;
+  margin-left: 1rem;
   margin-right: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .name {
@@ -37,10 +51,54 @@ img {
 .chip {
   padding: 0.25rem 1rem;
   border-radius: 2rem;
-  margin-top: 1.7rem;
   margin-right: 10rem;
-  border: 1px solid var(--yellow);
+  border: 1px solid;
 }
 .chip p {
   margin: 0;
+}
+
+.trends {
+  border: 2px solid var(--white);
+  border-radius: 50%;
+  padding: 0.35rem;
+  font-size: 2.3rem !important;
+}
+.up {
+  color: green;
+  border-color: var(--green);
+}
+.down {
+  color: var(--red);
+  border-color: var(--red);
+}
+.up:hover {
+  background: var(--green);
+  color: var(--white);
+  transition: all 0.3s;
+}
+.down:hover {
+  background: var(--red);
+  color: var(--white);
+  transition: all 0.3s;
+}
+
+.price {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  font-weight: 600;
+  font-size: 1rem;
+  position: absolute;
+  left: 11rem;
+}
+.rs {
+  padding-left: 3px;
+}
+.total {
+  margin-top: 5rem;
+  font-weight: 600;
+  font-size: 0.75rem;
+  opacity: 0.88;
+  margin-left: 0;
 }

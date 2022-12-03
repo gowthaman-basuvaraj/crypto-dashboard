@@ -6,6 +6,8 @@ import TabList from "@mui/lab/TabList";
 import TabPanel from "@mui/lab/TabPanel";
 import TabContext from "@mui/lab/TabContext";
 import Grid from "../Grid";
+import List from "../List";
+// import "../List/style1.css";
 
 function DashBoardInfo({ data }) {
   const [value, setValue] = React.useState(0);
@@ -37,7 +39,15 @@ function DashBoardInfo({ data }) {
             })}
           </div>
         </TabPanel>
-        <TabPanel value={1}>List</TabPanel>
+        <TabPanel value={1}>
+          <div className="list-flex">
+            <table>
+              {data.map((coin, i) => {
+                return <List coin={coin} key={i} />;
+              })}
+            </table>
+          </div>
+        </TabPanel>
       </TabContext>
     </div>
   );

@@ -65,7 +65,7 @@ a {
   text-decoration: none;
 }
 ::selection {
-  background-color: var(--yellow);
+  background-color: var(--blue);
   color: var(--white);
 }
 
