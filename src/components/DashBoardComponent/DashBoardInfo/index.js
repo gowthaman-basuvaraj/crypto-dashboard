@@ -1,4 +1,4 @@
-import "./styles.css";
+import "../DashBoardInfo/style.css";
 import * as React from "react";
 import PropTypes from "prop-types";
 import Tab from "@mui/material/Tab";
@@ -7,7 +7,6 @@ import TabPanel from "@mui/lab/TabPanel";
 import TabContext from "@mui/lab/TabContext";
 import Grid from "../Grid";
 import List from "../List";
-// import "../List/style1.css";
 
 function DashBoardInfo({ data }) {
   const [value, setValue] = React.useState(0);
@@ -40,13 +39,15 @@ function DashBoardInfo({ data }) {
           </div>
         </TabPanel>
         <TabPanel value={1}>
-          <div className="list-flex">
-            <table>
+          {/* <div className="list-flex"> */}
+          <table className="list-flex">
+            <tr>
               {data.map((coin, i) => {
                 return <List coin={coin} key={i} />;
               })}
-            </table>
-          </div>
+            </tr>
+          </table>
+          {/* </div> */}
         </TabPanel>
       </TabContext>
     </div>

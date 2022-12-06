@@ -1,0 +1,32 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0%;
+}
+.list-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1.75rem;
+}
+
+td {
+  padding-left: 1rem;
+  padding-right: 1rem;
+  margin-right: 1.5rem;
+  margin-left: 1.5rem;
+  min-width: 11.15vw;
+  font-size: 1rem;
+  text-align: center;
+}
+img {
+  width: 3.2rem;
+  height: 3.2rem;
+  display: block;
+}
+
+.date {
+  text-align: center;
+  padding-right: 0;
+  margin-right: 0;
+}

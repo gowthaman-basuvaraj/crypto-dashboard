@@ -16,14 +16,18 @@
   flex-wrap: wrap;
 }
 .list-flex {
-  display: flex;
+  /* display: flex; */
   width: 100%;
   padding-left: 0.75rem;
   padding-right: 0.75rem;
   padding-top: 1.2rem;
-  flex-direction: column;
+  overflow-x: auto !important;
+  /* flex-direction: column;
   align-items: center;
-  justify-content: center;
+  justify-content: center; */
+}
+table {
+  display: flex;
 }
 
 @media only screen and (max-width: 600px) {
