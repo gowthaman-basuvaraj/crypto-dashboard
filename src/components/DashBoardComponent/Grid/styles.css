@@ -72,7 +72,7 @@ img {
   font-size: 2.3rem !important;
 }
 .up {
-  color: green;
+  color: var(--yellow);
   border-color: var(--green);
 }
 .down {
