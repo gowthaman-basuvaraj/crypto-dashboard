@@ -33,18 +33,30 @@ function DashBoardInfo({ data }) {
         </TabList>
         <TabPanel value={0}>
           <div className="grid-flex">
-            {data.map((coin, i) => {
-              return <Grid coin={coin} key={i} />;
-            })}
+            {data.length === 0 ? (
+              <p>
+                No Crypto Currencies Found <br />
+              </p>
+            ) : (
+              data.map((coin, i) => {
+                return <Grid coin={coin} key={i} />;
+              })
+            )}
           </div>
         </TabPanel>
         <TabPanel value={1}>
           {/* <div className="list-flex"> */}
           <table className="list-flex">
             <tr>
-              {data.map((coin, i) => {
-                return <List coin={coin} key={i} />;
-              })}
+              {data.length === 0 ? (
+                <p className="empty">
+                  No Crypto Currencies Found <br />
+                </p>
+              ) : (
+                data.map((coin, i) => {
+                  return <List coin={coin} key={i} />;
+                })
+              )}
             </tr>
           </table>
           {/* </div> */}

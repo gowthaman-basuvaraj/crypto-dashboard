@@ -25,17 +25,19 @@ function Grid({ coin }) {
           <img src={image} />
           <div
             className="coin-info"
-            style={{ marginLeft: "1rem", marginRight: "1rem " }}
+            style={{ marginLeft: "1rem", marginRight: "1rem" }}
           >
             <p className="symbol">{symbol}</p>
             <p className="name">{name}</p>
           </div>
+
           {/* <div className="trends"> */}
           {percentageChange > 0 ? (
             <TrendingUpIcon className="trends up" />
           ) : (
             <TrendingDownIcon className="trends down" />
           )}
+
           {/* </div> */}
         </div>
         <div className="data-div">

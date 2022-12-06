@@ -30,13 +30,15 @@ function List({ coin }) {
 
   return (
     <div className="list-wrapper1">
-      <td>
-        <img src={image} alt="" />
-      </td>
-      <td>
-        <p>{symbol}</p>
-        <p>{name}</p>
-      </td>
+      <a href={`coin?${coin.id}`}>
+        <td>
+          <img src={image} alt="" />
+        </td>
+        <td>
+          <p>{symbol}</p>
+          <p>{name}</p>
+        </td>
+      </a>
       <td>
         {/* {percentageChange.toFixed(2)}% */}
         <div
