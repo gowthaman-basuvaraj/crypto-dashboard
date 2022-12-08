@@ -4,6 +4,7 @@ import { useSearchParams } from "react-router-dom";
 import Header from "../components/Header";
 import Loader from "../components/Loader";
 import CurrencyRupeeIcon from "@mui/icons-material/CurrencyRupee";
+import LineChart from "../components/DashBoardComponent/LineChart";
 
 function CoinPage() {
   const [searchParams] = useSearchParams();
@@ -28,6 +29,21 @@ function CoinPage() {
     }
   }, [searchParams]);
 
+  const chartData = {
+    labels: prices?.map((data) => data[0]),
+    datasets: [
+      {
+        data: prices?.map((data) => data[1]),
+        borderWidth: 2,
+        fill: false,
+        tension: 0.25,
+        backgroundColor: "white",
+        borderColor: "white",
+        pointRadius: 0,
+      },
+    ],
+  };
+
   useEffect(() => {
     if (data) {
       setLoadingChart(true);
@@ -48,7 +64,7 @@ function CoinPage() {
     <>
       {loading ? <Loader /> : null}
       <Header />
-      <h1>{searchParams}</h1>
+      <LineChart chartData={chartData} />
     </>
   );
 }
