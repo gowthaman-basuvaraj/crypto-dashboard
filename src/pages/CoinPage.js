@@ -17,7 +17,7 @@ function CoinPage() {
     if (searchParams) {
       setLoading(true);
       const url = `https://api.coingecko.com/api/v3/coins/${searchParams}`;
-      axios.get(url.slice(0, -1)).then((response) => {
+      axios.get(url.slice(0, -1), { crossDomain: true }).then((response) => {
         if (response.data) {
           //   console.log(response.data);
           setData(response.data);
@@ -48,7 +48,7 @@ function CoinPage() {
     if (data) {
       setLoadingChart(true);
       const url = `https://api.coingecko.com/api/v3/coins/${data.id}/market_chart?vs_currency=INR&days=30&interval=daily`;
-      axios.get(url).then((response) => {
+      axios.get(url, { crossDomain: true }).then((response) => {
         if (response.data) {
           console.log(response.data.prices);
           setPrices(response.data.prices);
