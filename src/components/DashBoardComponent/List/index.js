@@ -6,6 +6,7 @@ import { FaRupeeSign } from "react-icons/fa";
 
 function List({ coin }) {
   const {
+    id,
     image,
     symbol,
     name,
@@ -16,17 +17,17 @@ function List({ coin }) {
     last_updated,
   } = coin;
 
-  let updatedDate = (date) => {
-    const time = date.split("T");
-    const daa = time[0] + " " + time[1];
-    const d = new Date(daa);
-    let minutes = d.getTime();
-    var t = new Date(minutes);
-    var a = t.toTimeString().substring(0, 9);
-    let ans = a + "IST " + t.toDateString();
-    console.log(ans);
-    return <p>{ans}</p>;
-  };
+  // let updatedDate = (date) => {
+  //   const time = date.split("T");
+  //   const daa = time[0] + " " + time[1];
+  //   const d = new Date(daa);
+  //   let minutes = d.getTime();
+  //   var t = new Date(minutes);
+  //   var a = t.toTimeString().substring(0, 9);
+  //   let ans = a + "IST " + t.toDateString();
+  //   console.log(ans);
+  //   return <p>{ans}</p>;
+  // };
 
   return (
     <div className="list-wrapper1">
@@ -76,7 +77,7 @@ function List({ coin }) {
         </p>
       </td>
       <td>
-        <p className="date">{updatedDate(last_updated)}</p>
+        <p className="date">updatedDate</p>
       </td>
     </div>
   );
