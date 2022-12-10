@@ -7,6 +7,8 @@ import Header from "../components/Header";
 import Loader from "../components/Loader";
 import Search from "../components/DashBoardComponent/Search";
 import List from "../components/DashBoardComponent/List";
+import Select from "@mui/material/Select";
+import MenuItem from "@mui/material/MenuItem";
 
 function CoinPage() {
   const [searchParams] = useSearchParams();
@@ -15,6 +17,8 @@ function CoinPage() {
   const [loading, setLoading] = useState(true);
   const [loadingChart, setLoadingChart] = useState(true);
   const [coin, setCoin] = useState({});
+  const [prices, setPrices] = useState([]);
+  const [days, setDays] = useState(30);
   const [chartData, setChartData] = useState({
     labels: [],
     datasets: [
@@ -29,7 +33,6 @@ function CoinPage() {
       },
     ],
   });
-  const [prices, setPrices] = useState([]);
 
   const today = new Date();
   const priorDate = new Date(new Date().setDate(today.getDate() - 30));
@@ -40,6 +43,7 @@ function CoinPage() {
         display: false,
       },
     },
+    responsive: true,
     interaction: {
       mode: "index",
       intersect: false,
@@ -123,7 +127,43 @@ function CoinPage() {
     });
   };
 
-  // console.log(  { coin });
+  const handleChange = async (event) => {
+    setDays(event.target.value);
+    const API_URL2 = `https://api.coingecko.com/api/v3/coins/${data.id}/market_chart?vs_currency=usd&days=${event.target.value}&interval=daily`;
+
+    const prices_data = await axios.get(API_URL2, {
+      crossDomain: true,
+    });
+
+    if (!prices_data) {
+      console.log("No price data");
+      return;
+    }
+
+    setPrices(prices_data.data.prices);
+
+    const priorDate_2 = new Date(
+      new Date().setDate(today.getDate() - event.target.value)
+    );
+
+    var dates_2 = getDaysArray(priorDate_2, today);
+
+    setChartData({
+      labels: dates_2,
+      datasets: [
+        {
+          data: prices_data?.data?.prices?.map((data) => data[1]),
+          borderWidth: 2,
+          fill: false,
+          tension: 0.25,
+          backgroundColor: "white",
+          borderColor: "#3a80e9",
+          pointRadius: 2,
+          pointBorderColor: "orange",
+        },
+      ],
+    });
+  };
 
   return (
     <>
@@ -132,8 +172,47 @@ function CoinPage() {
       ) : (
         <>
           <Header />
-          <List coin={coin} />
-          <LineChart chartData={chartData} options={options} />
+          <div className="coin-page-div">
+            <List coin={coin} />
+          </div>
+          <div className="coin-page-div">
+            <p>
+              Price Change in the last
+              <span>
+                <Select
+                  value={days}
+                  label="Days"
+                  onChange={handleChange}
+                  className="select-days"
+                  sx={{
+                    height: "2.5rem",
+                    color: "var(--white)",
+                    "& .MuiOutlinedInput-notchedOutline": {
+                      borderColor: "var(--white)",
+                    },
+                    "& .MuiSvgIcon-root": {
+                      color: "var(--white)",
+                    },
+                  }}
+                >
+                  <MenuItem value={7}>7</MenuItem>
+                  <MenuItem value={30}>30</MenuItem>
+                  <MenuItem value={60}>60</MenuItem>
+                  <MenuItem value={90}>90</MenuItem>
+                </Select>
+              </span>
+              days
+            </p>
+            <LineChart
+              chartData={chartData}
+              options={options}
+              className="chart"
+            />
+          </div>
+          <div className="coin-page-div description">
+            <h2>{data.name}</h2>
+            <p dangerouslySetInnerHTML={{ __html: data.description.en }} />
+          </div>
         </>
       )}
     </>
