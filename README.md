@@ -74,5 +74,6 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/t
 3. share button was not working using the react-web-share npm to solve that enclosed the Oultined btn component button tag and removed all the default properties of the button.
 4.Tabs was difficult to implement.
 5.After TabContext was added same data was rendered in grid and List-->Solution:Added Value of {0} and{1}
+ <!-- 6. Refer lec-8 to find issues with chartjs --> -->
 
 -->
