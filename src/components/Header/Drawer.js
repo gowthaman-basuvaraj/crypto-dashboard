@@ -1,6 +1,7 @@
 import * as React from "react";
 
 import Drawer from "@mui/material/Drawer";
+import dashboard from "../DashBoardComponent/Grid";
 import Button from "@mui/material/Button";
 import MenuIcon from "@mui/icons-material/Menu";
 import { IconButton } from "@mui/material";
@@ -25,8 +26,8 @@ export default function TemporaryDrawer() {
           <a href="/">
             <p className="links">Home</p>
           </a>
-          <a href="/search">
-            <p className="links">Search</p>
+          <a href="/compare">
+            <p className="links">Compare</p>
           </a>
           <a href="/about-us">
             <p className="links">About Us</p>

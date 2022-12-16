@@ -3,7 +3,7 @@ import Header from "./components/Header";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Home from "./pages/Home";
 import Dashboard from "./pages/Dashboard";
-import Search from "./pages/Search";
+import Compare from "./pages/Compare";
 import CoinPage from "./pages/CoinPage";
 
 function App() {
@@ -13,7 +13,7 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/dashboard" element={<Dashboard />} />
         <Route path="coin" element={<CoinPage />} />
-        <Route path="search" element={<Search />} />
+        <Route path="compare" element={<Compare />} />
       </Routes>
     </BrowserRouter>
   );

@@ -2,7 +2,7 @@ import React from "react";
 import "./styles.css";
 import Button from "../Button";
 import Dashboard from "../../pages/Dashboard";
-import Search from "../../pages/Search";
+import Compare from "../../pages/Compare";
 import Home from "../../pages/Home";
 import Drawer from "./Drawer";
 
@@ -18,8 +18,8 @@ function Header() {
           <a href="/">
             <p className="links">Home</p>
           </a>
-          <a href="/search">
-            <p className="links">Search</p>
+          <a href="/compare">
+            <p className="links">Compare</p>
           </a>
           <a href="/about-us">
             <p className="links">About Us</p>
