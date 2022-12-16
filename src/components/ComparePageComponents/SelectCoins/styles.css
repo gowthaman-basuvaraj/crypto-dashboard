@@ -1,0 +1,23 @@
+.select-flex {
+  display: flex;
+  justify-content: flex-start;
+  gap: 2rem;
+  align-items: center;
+  margin: 1rem 3rem;
+}
+.label {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+@media only screen and (max-width: 800px) {
+  .select-flex {
+    margin: 0.5rem 1.5rem;
+    gap: 1rem;
+  }
+  .label {
+    flex-direction: column;
+    justify-content: flex-start;
+  }
+}
