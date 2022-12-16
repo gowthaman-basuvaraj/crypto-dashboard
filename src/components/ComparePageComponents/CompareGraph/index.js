@@ -3,6 +3,7 @@ import React, { useEffect, useState } from "react";
 import LineChart from "../../DashBoardComponent/LineChart";
 import Loader from "../../Loader";
 import "./styles.css";
+
 function CompareGraph({ crypto1, crypto2, days }) {
   const [prices1, setPrices1] = useState([]);
   const [prices2, setPrices2] = useState([]);
