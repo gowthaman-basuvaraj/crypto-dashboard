@@ -8,7 +8,7 @@ import TabContext from "@mui/lab/TabContext";
 import Grid from "../Grid";
 import List from "../List";
 
-function DashBoardInfo({ data }) {
+function DashBoardInfo({ data, currency }) {
   const [value, setValue] = React.useState(0);
 
   const handleChange = (event, newValue) => {
@@ -23,6 +23,7 @@ function DashBoardInfo({ data }) {
     fontFamily: "Inter",
     textTransform: "capitalize",
   };
+
 
   return (
     <div className="tabs-wrapper">
@@ -39,7 +40,7 @@ function DashBoardInfo({ data }) {
               </p>
             ) : (
               data.map((coin, i) => {
-                return <Grid coin={coin} key={i} />;
+                return <Grid coin={coin} key={i} currency={currency}/>;
               })
             )}
           </div>

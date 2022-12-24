@@ -4,7 +4,7 @@ import { FaRupeeSign } from "react-icons/fa";
 import TrendingUpIcon from "@mui/icons-material/TrendingUp";
 import TrendingDownIcon from "@mui/icons-material/TrendingDown";
 
-function Grid({ coin }) {
+function Grid({ coin, currency }) {
   const {
     image,
     symbol,
@@ -15,6 +15,10 @@ function Grid({ coin }) {
     total_volume,
   } = coin;
 
+  const cMap = {
+    "USD": "$",
+    "INR": "₹"
+  }
   return (
     <a href={`coin?${coin.id}`}>
       <div
@@ -58,8 +62,7 @@ function Grid({ coin }) {
             )}
           </div>
           <div className="price">
-            {CurrentPrice.toLocaleString("en-IN")}
-            <FaRupeeSign className="rs" />
+            <span>{cMap[currency]}</span> <span>{CurrentPrice}</span>
           </div>
         </div>
         <div className="total">

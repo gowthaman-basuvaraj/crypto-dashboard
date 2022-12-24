@@ -9,9 +9,8 @@ function Dashboard() {
   const [data, setData] = useState([]);
   const [loading, setLoading] = useState(true);
   const [search, setSearch] = useState("");
+  const [currency, setCurrency] = useState("INR");
 
-  const url =
-    "https://api.coingecko.com/api/v3/coins/markets?vs_currency=INR&order=market_cap_desc&per_page=100&page=1&sparkline=false";
 
   const filteredCoins = data?.filter(
     (coin) =>
@@ -24,8 +23,15 @@ function Dashboard() {
     setSearch(e.target.value);
   };
 
+  const currencySelected = (c) => {
+    console.log('currency Selected', c)
+    setCurrency(c)
+  }
+
   useEffect(() => {
     setLoading(true);
+    const url =
+        `https://api.coingecko.com/api/v3/coins/markets?vs_currency=${currency}&order=market_cap_desc&per_page=100&page=1&sparkline=false`;
     axios.get(url, { crossDomain: true }).then((response) => {
       if (response.data) {
         setData(response.data);
@@ -34,7 +40,7 @@ function Dashboard() {
       }
       setLoading(false);
     });
-  }, []);
+  }, [currency]);
 
   return (
     <>
@@ -44,7 +50,9 @@ function Dashboard() {
         <>
           <Header />
           <Search handleChange={handleChange} />
-          <DashBoardInfo data={filteredCoins} />
+          <button onClick={() => currencySelected('USD')}>USD</button>
+          <button onClick={() => currencySelected('INR')}>INR</button>
+          <DashBoardInfo data={filteredCoins} currency={currency} />
         </>
       )}
     </>
